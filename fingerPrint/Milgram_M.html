@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Portfolio Item - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/portfolio-item.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+		<!-- Google fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+		<!-- D3.js -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/index.html">Back to Network</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Portfolio Item Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Milgram_M
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Portfolio Item Row -->
+        <div class="row">
+
+            <div class="col-md-8">
+                <div class="radarChart"></div>
+            </div>
+
+            <div class="col-md-4">
+                <h3>Author Description</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+                <h3>Project Details</h3>
+                <ul>
+                    <li>Lorem Ipsum</li>
+                    <li>Dolor Sit Amet</li>
+                    <li>Consectetur</li>
+                    <li>Adipiscing Elit</li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <!-- Related Projects Row -->
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h3 class="page-header">Similar Authors</h3>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <h5>Hornik_K</h5>
+                <a href="Hornik_K.html" >
+                    <div class="chart1"></div>
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <h5>van-den-Bosch_A</h5>
+                <a href="van-den-Bosch_A.html" >
+                    <div class="chart2"></div>
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <h5>Bergen_J</h5>
+                <a href="Bergen_J.html" >
+                    <div class="chart3"></div>
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <h5>Hansen_L</h5>
+                <a href="Hansen_L.html" >
+                    <div class="chart4"></div>
+                </a>
+
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Cha Chen 2016</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+		<script src="radarChart.js"></script>	
+		<script>
+		 ////////////////////////////////////////////////////////////// 
+		 //////////////////////// Set-Up ////////////////////////////// 
+		 ////////////////////////////////////////////////////////////// 
+
+		 var margin = {top: 100, right: 100, bottom: 100, left: 100},
+				 width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right,
+				 height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+
+
+		 
+		 ////////////////////////////////////////////////////////////// 
+		 ////////////////////////// Data ////////////////////////////// 
+		 ////////////////////////////////////////////////////////////// 
+
+     var data = [
+         [
+             {axis:"Topic 67",value:0.107573},
+             {axis:"Topic 7",value:0.0886773},
+             {axis:"Topic 93",value:0.0843169},
+             {axis:"Topic 24",value:0.069782},
+             {axis:"Topic 52",value:0.0654215},
+             {axis:"Topic 36",value:0.063968},
+             {axis:"Topic 10",value:0.0625145},
+             {axis:"Topic 9",value:0.061061},
+             {axis:"Topic 84",value:0.0508866},
+         ]
+     ];
+     var dataSim1 = [
+         [
+             {axis:"Topic 1",value:0.141557},
+             {axis:"Topic 18",value:0.130733},
+             {axis:"Topic 84",value:0.0774438},
+             {axis:"Topic 7",value:0.0766112},
+             {axis:"Topic 36",value:0.0657868},
+             {axis:"Topic 44",value:0.039975},
+             {axis:"Topic 52",value:0.0391424},
+             {axis:"Topic 9",value:0.0391424},
+             {axis:"Topic 80",value:0.0383097},
+         ]
+     ];
+     var dataSim2 = [
+         [
+             {axis:"Topic 84",value:0.173096},
+             {axis:"Topic 85",value:0.146173},
+             {axis:"Topic 82",value:0.146173},
+             {axis:"Topic 67",value:0.0923269},
+             {axis:"Topic 10",value:0.0884808},
+             {axis:"Topic 59",value:0.0461731},
+             {axis:"Topic 65",value:0.00578846},
+             {axis:"Topic 77",value:0.00194231},
+             {axis:"Topic 63",value:0.00194231},
+         ]
+     ];
+     var dataSim3 = [
+         [
+             {axis:"Topic 65",value:0.181681},
+             {axis:"Topic 90",value:0.132445},
+             {axis:"Topic 64",value:0.115467},
+             {axis:"Topic 85",value:0.0730221},
+             {axis:"Topic 1",value:0.0645331},
+             {axis:"Topic 82",value:0.0220883},
+             {axis:"Topic 48",value:0.00850594},
+             {axis:"Topic 96",value:0.00511036},
+             {axis:"Topic 41",value:0.00511036},
+         ]
+     ];
+     var dataSim4 = [
+         [
+             {axis:"Topic 7",value:0.135277},
+             {axis:"Topic 31",value:0.125446},
+             {axis:"Topic 2",value:0.117582},
+             {axis:"Topic 24",value:0.0621353},
+             {axis:"Topic 28",value:0.0601691},
+             {axis:"Topic 51",value:0.0538773},
+             {axis:"Topic 57",value:0.0523044},
+             {axis:"Topic 23",value:0.0503382},
+             {axis:"Topic 84",value:0.0365749},
+         ]
+     ];
+
+
+
+
+		 //////////////////////////////////////////////////////////////
+		 //////////////////// Draw the Chart ////////////////////////// 
+		 ////////////////////////////////////////////////////////////// 
+
+		 var color = d3.scale.ordinal()
+				           .range(["#EDC951","#CC333F","#00A0B0"]);
+
+		 var radarChartOptions = {
+			   w: width,
+			   h: height,
+			   margin: margin,
+			   maxValue: 0.5,
+			   levels: 5,
+			   roundStrokes: true,
+			   color: color
+		 };
+
+
+     var marginSmall = {top: 50, right: 50, bottom: 50, left: 50};
+     var radarChartOptionsSmall = {
+ 			   w: 160,
+			   h: 160,
+			   margin: marginSmall,
+			   maxValue: 0.5,
+			   levels: 5,
+			   roundStrokes: true,
+			   color: color
+     }
+		 //Call function to draw the Radar chart
+		 RadarChart(".radarChart", data, radarChartOptions);
+		 RadarChart(".chart1", dataSim1, radarChartOptionsSmall);
+		 RadarChart(".chart2", dataSim2, radarChartOptionsSmall);
+		 RadarChart(".chart3", dataSim3, radarChartOptionsSmall);
+		 RadarChart(".chart4", dataSim4, radarChartOptionsSmall);
+		</script>
+
+</body>
+
+</html>

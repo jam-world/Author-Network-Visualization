@@ -1,0 +1,40 @@
+{
+  "nodes": [
+    {
+      "id": "bar",
+      "match": 1.0,
+      "name": "author",
+      "artist": "Paul Simon",
+        "type": "author",
+        "color": "red"
+    },
+    {
+      "id": "foo",
+      "match": 0.983114,
+      "name": "topic",
+      "artist": "words",
+        "type": "topic",
+        "color": "blue"
+    },
+    {
+      "id": "aka",
+      "match": 0.983114,
+      "name": "words",
+      "artist": "neural",
+        "type": "words",
+        "color": "green"
+    }
+  ],
+  "links": [
+    {
+        "source": "foo",
+        "target": "bar",
+        "prob": 0.1
+    },
+    {
+      "source": "bar",
+        "target": "aka",
+        "prob": 0.6
+    }
+  ]
+}

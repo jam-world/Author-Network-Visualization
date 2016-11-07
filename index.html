@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="Visualization for the Co-Author Network">
+    <meta name="author" content="Cha Chen">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Co-Author Networks</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- CSS concatenated and minified via ant build script-->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- end CSS-->
+
+    <script src="js/libs/modernizr-2.0.6.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400' rel='stylesheet' type='text/css'>
+
+    <!-- build:js modernizr.touch.js -->
+    <script src="dist/lib/modernizr.touch.js"></script>
+    <!-- endbuild -->
+    <link href="dist/mfb.css" rel="stylesheet">
+
+    <!-- import the script for zoom in and zoom out -->
+    <script src="dist/svg-pan-zoom.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Co-Author Network
+                    </a>
+                </li>
+                <li>
+                    <!-- <a href="#">Search</a> -->
+                    <form id="search_form" action=""  method="post">
+                        <p class="search_title">Search <input type="text" class="text-input" id="search" value="" /></p>
+                    </form>
+                </li>
+
+                <li class="sidebar-brand">
+                </li>
+                <li class="sidebar-brand">
+                </li>
+                <li class="sidebar-brand">
+                </li>
+                <li class="sidebar-brand">
+                </li>
+                <li class="sidebar-brand">
+                </li>
+                <li class="sidebar-brand">
+                </li>
+                <li class="sidebar-brand">
+                </li>
+                <li class="sidebar-brand">
+                </li>
+                <li class="sidebar-brand">
+                </li>
+                <li class="sidebar-brand">
+                    Dedicated to Feng Feng
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- <h1>Simple Sidebar</h1> -->
+                        <!-- <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p> -->
+                        <!-- <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p> -->
+                        <!-- <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a> -->
+                        <ul id="menu" class="mfb-component--br mfb-zoomin" data-mfb-toggle="hover">
+                            <li class="mfb-component__wrap">
+                                <a href="#" class="mfb-component__button--main">
+                                    <i class="mfb-component__main-icon--resting ion-plus-round"></i>
+                                    <i class="mfb-component__main-icon--active ion-close-round"></i>
+                                </a>
+                                <ul class="mfb-component__list">
+                                    <li>
+                                        <a href="#menu-toggle" id="menu-toggle" data-mfb-label="Toggle Menu" class="mfb-component__button--child">
+                                            <i class="mfb-component__child-icon ion-plus-round"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <button id="zoom-in">
+                                            <i class="mfb-component__child-icon ion-social-octocat"></i>
+                                        </button>
+                                    </li>
+
+                                    <li>
+                                        <button id="zoom-out">
+                                            <i class="mfb-component__child-icon ion-social-twitter"></i>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+
+                        <div id="main" role="main">
+                            <div id="vis"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+
+
+    <script defer src="js/plugins.js"></script>
+    <script defer src="js/script.js"></script>
+    <script src="js/libs/coffee-script.js"></script>
+    <script src="js/libs/d3.v2.js"></script>
+    <script src="js/Tooltip.js"></script>
+    <script type="text/coffeescript" src="coffee/vis.coffee"></script>
+
+    <script> // Change UA-XXXXX-X to be your site's ID
+     window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+     Modernizr.load({
+         load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+     });
+    </script>
+
+    <script>
+      // Don't use window.onLoad like this in production, because it can only listen to one function.
+      window.onload = function() {
+          console.log(document.querySelector('#triger'))
+        // Expose to window namespase for testing purposes
+        window.zoomTiger = svgPanZoom('#triger', {
+          zoomEnabled: true,
+          controlIconsEnabled: false,
+          fit: true,
+          center: true,
+          // viewportSelector: document.getElementById('demo-tiger').querySelector('#g4') // this option will make library to misbehave. Viewport should have no transform attribute
+        });
+      };
+    </script>
+
+
+
+    <!--[if lt IE 7 ]>
+        <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+        <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+    <![endif]-->
+    
+
+</body>
+
+</html>
